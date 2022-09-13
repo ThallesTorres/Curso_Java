@@ -51,4 +51,10 @@ public class AccountBankData {
         accountBalance = accountBalance - WITHDRAWAL_FEE - value;
     }
 
+    public String toString() {
+
+        return String.format("Account data: %nAccount %d, Holder: %s, Balance: $%.2f%n", 
+        getAccountNumber(), getAccountHolder(), getAccountBalance());
+    }
+
 }

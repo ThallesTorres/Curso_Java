@@ -19,6 +19,8 @@ public class App {
         System.out.print("Enter account number: ");
         accountNumber = sc.nextInt();
 
+        
+
         sc.nextLine();
         System.out.print("Enter account holder: ");
         accountHolder = sc.nextLine();
@@ -39,23 +41,21 @@ public class App {
 
         accountBankData = new AccountBankData(accountNumber, accountHolder, initialDeposit);
 
-        System.out.printf("Account data: %nAccount %d, Holder: %s, Balance: $%.2f%n", accountBankData.getAccountNumber(), accountBankData.getAccountHolder(), accountBankData.getAccountBalance());
+        System.out.println(accountBankData.toString());
 
         System.out.print("Enter a deposit value: ");
         double value = sc.nextDouble();
 
         accountBankData.deposit(value);
 
-        System.out.printf("Updated account data: %nAccount %d, Holder: %s, Balance: $%.2f%n", 
-        accountBankData.getAccountNumber(), accountBankData.getAccountHolder(), accountBankData.getAccountBalance());
+        System.out.printf("Updated%n" + accountBankData.toString());
 
         System.out.print("Enter a withdraw value: ");
         value = sc.nextDouble();
 
         accountBankData.withdraw(value);
 
-        System.out.printf("Updated account data: %nAccount %d, Holder: %s, Balance: $%.2f", 
-        accountBankData.getAccountNumber(), accountBankData.getAccountHolder(), accountBankData.getAccountBalance());
+        System.out.printf("Updated%n" + accountBankData.toString());
 
         sc.close();
     }
