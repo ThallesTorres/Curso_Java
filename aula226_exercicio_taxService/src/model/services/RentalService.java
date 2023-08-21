@@ -29,7 +29,7 @@ public class RentalService {
             basicPayment = pricePerDay * Math.ceil(hours / 24);
         }
 
-        double tax = taxService.tax(basicPayment);
+        double tax = taxService.taxService(basicPayment);
 
         carRental.setInvoice(new Invoice(basicPayment, tax));
     }
